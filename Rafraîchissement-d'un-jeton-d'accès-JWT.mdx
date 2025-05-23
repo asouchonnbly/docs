@@ -1,0 +1,52 @@
+---
+title: "Rafraîchissement d’un jeton d’accès JWT"
+description: "Un jeton expiré ou sur le point d’expirer peut être régénéré via un point d’accès dédié sous condition que le jeton était initialement valide."
+api: POST /api/v1/auth/refresh
+contentType: application/json
+---
+
+
+<RequestExample>
+```bash cURL
+curl -X POST
+-H 'content-type:application/json
+-d '{
+"refresh_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJudW1iZXJseSIsImxvZ2luIj
+oiZm9vIiwiZXhwIjoxNzE5OTk2MDA1LCJpYXQiOjE3MTk5MDk2MDUsImlzcyI6Im51bWJlcmx5LmRl
+diIsIm5iZiI6MTcxOTkwOTYwNX0.tAD49PkvAGbo3Jc9O05iFXQ88EptZDcAPXDHMMNh9cY" }'
+https://omnichannel.numberly.com/api/v1/auth/refresh
+```
+</RequestExample>
+
+
+## Réponse
+
+Si le jeton est valide, la réponse au format JSON sera de la forme :
+
+<ResponseField name="access_token" type="string"/>
+
+<ResponseField name="expires_in" type="number"/>
+
+<ResponseField name="token_type" type="string"/>
+
+<ResponseField name="refresh_token" type="string"/>
+
+<ResponseField name="refresh_token_expires_in" type="number"/>
+
+<ResponseExample>
+```json
+{
+"access_token":
+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJudW1iZXJseSIsImxvZ2luIjoiZm9vIiwiZXhwI
+joxNzE5OTM4ODU0LCJpYXQiOjE3MTk5MTAwNTQsImlzcyI6Im51bWJlcmx5LmRldiIsIm5iZiI6MTcx
+OTkxMDA1NH0.gyQENl_6zjStonrvTSPsbgQQTn09kW5EqkVeN8rezr8",
+"expires_in": 14400,
+"token_type": "bearer",
+"refresh_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJudW1iZXJseSIsImxvZ2luIjoiZm9vIiwiZXhwI
+joxNzE5OTk2NDU0LCJpYXQiOjE3MTk5MTAwNTQsImlzcyI6Im51bWJlcmx5LmRldiIsIm5iZiI6MTcx
+OTkxMDA1NH0.5L33RVT5NBErrdnUjo643S2e2ghm2Edp1hC9pNfIPkc",
+"refresh_token_expires_in": 14400
+}
+
+```
+</ResponseExample>

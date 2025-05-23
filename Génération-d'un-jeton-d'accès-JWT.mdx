@@ -1,0 +1,118 @@
+---
+title: "Génération d’un jeton d’accès JWT"
+description: "La génération d’un jeton d’accès JWT est nécessaire pour utiliser les points d’accès permettant d’opérer une action telle que l’envoi d’un message."
+api: POST /api/v1/auth/token
+contentType: application/json
+---
+
+Les jetons JWT générés sont chiffrés avec l’algorithme HS256 et un secret différent par environnement. Les propriétés suivantes sont présentes et validées lors de leur usage :
+
+<CardGroup>
+  <Card
+    title="iat"
+    icon="clock"
+    iconType="solid"
+    href="#iat"
+    horizontal
+  >
+  timestamp de génération
+  </Card>
+
+  <Card
+    title="exp"
+    icon="hourglass-end"
+    iconType="solid"
+    href="#exp"
+    horizontal
+  >
+    timestamp d'expiration
+  </Card>
+
+  <Card
+    title="nbf"
+    icon="hourglass-start"
+    iconType="solid"
+    href="#nbf"
+    horizontal
+  >
+    timestamp de borne inférieure de validité
+  </Card>
+
+  <Card
+    title="iss"
+    icon="building"
+    iconType="solid"
+    href="#iss"
+    horizontal
+  >
+    entité ayant émis le jeton
+  </Card>
+
+  <Card
+    title="aud"
+    icon="users"
+    iconType="solid"
+    href="#aud"
+    horizontal
+  >
+    audience d’usage du jeton
+  </Card>
+</CardGroup>
+
+## Données du POST
+
+<ParamField body="login" type="string" required/>
+
+<ParamField body="password" type="string" required/>
+
+## JSON schema (validation)
+
+```json
+{
+"type": "object",
+"properties": {"login": {"type": "string"}, "password": {"type": "string"}},
+"required": ["login", "password"],
+"additionalProperties": False,
+}
+```
+
+
+<RequestExample>
+```bash cURL
+curl -X POST
+-H 'content-type:application/json'
+-d '{ "login":"JohnDoe", "password":"myStrongPassword" }'
+https://omnichannel.numberly.com/api/v1/auth/token
+```
+</RequestExample>
+
+## Réponse
+Si les identifiants sont valides, la réponse au format JSON sera de la forme :
+
+<ResponseField name="access_token" type="string"/>
+
+<ResponseField name="expires_in" type="number"/>
+
+<ResponseField name="token_type" type="string"/>
+
+<ResponseField name="refresh_token" type="string"/>
+
+<ResponseField name="refresh_token_expires_in" type="number"/>
+
+
+<ResponseExample>
+```json
+{
+"access_token":
+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJudW1iZXJseSIsImxvZ2luIjoiZm9vIiwiZXhwI
+joxNzE5OTM4NDA1LCJpYXQiOjE3MTk5MDk2MDUsImlzcyI6Im51bWJlcmx5LmRldiIsIm5iZiI6MTcx
+OTkwOTYwNX0.eo1dL3m65BgP-kRmdd8IYNx2jNMQ3-VcVmKFlp9Hfes",
+"expires_in": 14400,
+"token_type": "bearer",
+"refresh_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJudW1iZXJseSIsImxvZ2luIjoiZm9vIiwiZXhwI
+joxNzE5OTk2MDA1LCJpYXQiOjE3MTk5MDk2MDUsImlzcyI6Im51bWJlcmx5LmRldiIsIm5iZiI6MTcx
+OTkwOTYwNX0.tAD49PkvAGbo3Jc9O05iFXQ88EptZDcAPXDHMMNh9cY",
+"refresh_token_expires_in": 14400
+}
+```
+</ResponseExample>

@@ -1,0 +1,101 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Olibot",
+  "colors": {
+    "primary": "#04A5B5",
+    "light": "#04A5B5",
+    "dark": "#04A5B5"
+  },
+  "favicon": "/favicon.png",
+  "appearance": {
+    "default": "light",
+    "strict": true
+  },
+  "fonts": {
+    "heading": {
+      "family": "Able",
+      "source": "https://mintlify-assets.b-cdn.net/f92fe89.woff2",
+      "format": "woff2"
+    },
+    "body": {
+      "family": "Ubuntu",
+      "source": "https://mintlify-assets.b-cdn.net/9530b9e.woff2",
+      "format": "woff2"
+    }
+  },
+  "navigation": {
+    "languages": [
+      {
+        "language": "fr",
+        "tabs": [
+          {
+            "tab": "Référence de l'API",
+            "groups": [
+              {
+                "group": " ",
+                "pages": [
+                  "Objet-du-document",
+                  "Présentation-du-cadre-global-d'envoi-d'un-message",
+                  "Description-de-l'API",
+                  "Schéma-de-principe"
+                ]
+              },
+              {
+                "group": "Points de terminaison",
+                "pages": [
+                  "Génération-d'un-jeton-d'accès-JWT",
+                  "Rafraîchissement-d'un-jeton-d'accès-JWT",
+                  "Révocation-d'un-jeton-d'accès-JWT"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Documentation",
+          "href": "https://mintlify.com/docs",
+          "icon": "book-open-cover"
+        },
+        {
+          "anchor": "Community",
+          "href": "https://mintlify.com/community",
+          "icon": "slack"
+        },
+        {
+          "anchor": "Blog",
+          "href": "https://mintlify.com/blog",
+          "icon": "newspaper"
+        }
+      ]
+    }
+  },
+  "logo": {
+    "light": "/logo/numberly-logo.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "mailto:hi@mintlify.com"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Dashboard",
+      "href": "https://dashboard.mintlify.com"
+    }
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/mintlify",
+      "github": "https://github.com/mintlify",
+      "linkedin": "https://linkedin.com/company/mintlify"
+    }
+  }
+}

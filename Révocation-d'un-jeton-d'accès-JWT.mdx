@@ -1,0 +1,34 @@
+---
+title: "Révocation d’un jeton d’accès JWT"
+description: "Un jeton peut être révoqué pour en interdire immédiatement l’usage."
+api: POST /api/v1/auth/revoke
+contentType: application/json
+---
+
+
+<RequestExample>
+```bash cURL
+curl -X POST
+-H 'content-type:application/json
+-d '{
+"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJudW1iZXJseSIsImxvZ2luIjoiZm9vIi
+wiZXhwIjoxNzE5OTM4NDA1LCJpYXQiOjE3MTk5MDk2MDUsImlzcyI6Im51bWJlcmx5LmRldiIsIm5i
+ZiI6MTcxOTkwOTYwNX0.eo1dL3m65BgP-kRmdd8IYNx2jNMQ3-VcVmKFlp9Hfes" }'
+https://omnichannel.numberly.com/api/v1/auth/revoke
+```
+</RequestExample>
+
+
+## Réponse
+
+Si le jeton est valide, la réponse au format JSON sera de la forme :
+
+<ResponseField name="message" type="string"/>
+
+
+
+<ResponseExample>
+```json 
+{"message": "token revoked"}
+```
+</ResponseExample>
