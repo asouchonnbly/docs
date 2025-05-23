@@ -40,7 +40,10 @@
                   "Description-de-l'API",
                   "Schéma-de-principe"
                 ]
-              },
+              }
+            ],
+            "tabd": "Endpoints",
+              "groupsd": [
               {
                 "group": "Points de terminaison",
                 "pages": [
