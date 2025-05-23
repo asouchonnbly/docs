@@ -33,7 +33,7 @@
             "tab": "Référence de l'API",
             "groups": [
               {
-                "group": "Guides d'utilisation",
+                "group": " ",
                 "pages": [
                   "Objet-du-document",
                   "Présentation-du-cadre-global-d'envoi-d'un-message",
@@ -42,19 +42,12 @@
                 ]
               },
               {
-                "group": "Documentation API",
+                "group": "Points de terminaison",
                 "pages": [
-                  {
-                    "title": "Token",
-                    "endpoints": [
-                      "Génération-d'un-jeton-d'accès-JWT",
+                  "Génération-d'un-jeton-d'accès-JWT",
                   "Rafraîchissement-d'un-jeton-d'accès-JWT",
                   "Révocation-d'un-jeton-d'accès-JWT",
                   "Envoi-de-sms"
-                    ]
-                    
-                  }
-                  
                 ]
               }
             ]
