@@ -46,7 +46,8 @@
                 "pages": [
                   "Génération-d'un-jeton-d'accès-JWT",
                   "Rafraîchissement-d'un-jeton-d'accès-JWT",
-                  "Révocation-d'un-jeton-d'accès-JWT"
+                  "Révocation-d'un-jeton-d'accès-JWT",
+                  "Envoi-de-sms"
                 ]
               }
             ]
