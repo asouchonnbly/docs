@@ -30,6 +30,29 @@
         "language": "fr",
         "tabs": [
           {
+            "tab": "Guide d'utilisation",
+            "groups": [
+              {
+                "group": " ",
+                "pages": [
+                  "Objet-du-document",
+                  "Présentation-du-cadre-global-d'envoi-d'un-message",
+                  "Description-de-l'API",
+                  "Schéma-de-principe"
+                ]
+              },
+              {
+                "group": "Points de terminaison",
+                "pages": [
+                  "Génération-d'un-jeton-d'accès-JWT",
+                  "Rafraîchissement-d'un-jeton-d'accès-JWT",
+                  "Révocation-d'un-jeton-d'accès-JWT",
+                  "Envoi-de-sms"
+                ]
+              }
+            ]
+          },
+          {
             "tab": "Référence de l'API",
             "groups": [
               {
